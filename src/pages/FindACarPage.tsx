@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Car, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BACKEND_URL } from "@/utils/config"; 
+import { BACKEND_URL } from "@/utils/config";
 
 const carTypes = ["Sedan", "SUV", "Hatchback", "Ute", "Van", "Coupe"];
 const paths = ["new", "preowned"];
@@ -150,9 +150,12 @@ const FindACarPage = () => {
                 <div key={car._id} className="bg-card rounded-2xl shadow">
                   <div className="h-48 bg-gray-100 flex items-center justify-center">
                     <img
-                      src={car.image || "/images/car1.png"}
+                      src={car.images?.[0] || "/images/car1.png"}
                       alt={car.title}
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = "/images/car1.png";
+                      }}
                     />
                   </div>
 
@@ -160,7 +163,11 @@ const FindACarPage = () => {
                     <div className="flex justify-between mb-2">
                       <h3 className="font-bold">{car.title}</h3>
                       <span className="text-primary font-bold">
-                        ${car.price_range?.low} - ${car.price_range?.high}
+                        {car.price?.current
+                          ? `$${car.price.current.toLocaleString()}`
+                          : car.price_range?.low && car.price_range?.high
+                            ? `$${car.price_range.low.toLocaleString()} - $${car.price_range.high.toLocaleString()}`
+                            : "N/A"}
                       </span>
                     </div>
 
