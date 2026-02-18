@@ -29,10 +29,11 @@ interface Vehicle {
   make: string;
   model: string;
   year: number;
-  price_range: PriceRange;
+  price_range?: PriceRange | null;
+  price?: { current?: number };
   location?: string;
   odometer?: string;
-  images: string[];
+  images?: string[];
   description?: string;
   auction_date?: string;
   reserve?: string;
@@ -117,10 +118,20 @@ const VehicleDetailPage = () => {
 
   const mainImage = vehicle.images?.[0] || "/images/car-placeholder.jpg";
   const isLive = vehicle.status?.toLowerCase() === "live";
-  const priceText =
-    vehicle.price_range.low === vehicle.price_range.high
-      ? `$${vehicle.price_range.low.toLocaleString()}`
-      : `$${vehicle.price_range.low.toLocaleString()} – $${vehicle.price_range.high.toLocaleString()}`;
+
+  let priceText = "N/A";
+  if (
+    vehicle.price_range &&
+    typeof vehicle.price_range.low === "number" &&
+    typeof vehicle.price_range.high === "number"
+  ) {
+    priceText =
+      vehicle.price_range.low === vehicle.price_range.high
+        ? `$${vehicle.price_range.low.toLocaleString()}`
+        : `$${vehicle.price_range.low.toLocaleString()} – $${vehicle.price_range.high.toLocaleString()}`;
+  } else if (vehicle.price && typeof vehicle.price.current === "number") {
+    priceText = `$${vehicle.price.current.toLocaleString()}`;
+  }
 
   return (
     <div className="pt-20 pb-24 min-h-screen bg-gray-50">
