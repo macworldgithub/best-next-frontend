@@ -1,14 +1,17 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Car, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { BACKEND_URL } from "@/utils/config"; 
 
 const carTypes = ["Sedan", "SUV", "Hatchback", "Ute", "Van", "Coupe"];
 const paths = ["new", "preowned"];
 
-const API_URL = "http://localhost:8000/vehicles";
+const API_URL = `${BACKEND_URL}vehicles`;
 
 const FindACarPage = () => {
-  const [vehicles, setVehicles] = useState<any[]>([]);
+  const navigate = useNavigate();
+  const [vehicles, setVehicles] = useState([]);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [path, setPath] = useState("preowned");
 
@@ -175,7 +178,7 @@ const FindACarPage = () => {
 
                     <Button
                       className="w-full"
-                      onClick={() => window.open(car.url, "_blank")}
+                      onClick={() => navigate(`/vehicle/${car._id}`)}
                     >
                       View Details
                     </Button>
