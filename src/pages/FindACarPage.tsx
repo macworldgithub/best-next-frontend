@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Car, Gauge } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BACKEND_URL } from "@/utils/config"; 
+import { BACKEND_URL } from "@/utils/config";
 
 const carTypes = ["Sedan", "SUV", "Hatchback", "Ute", "Van", "Coupe"];
 const paths = ["new", "preowned"];
@@ -150,7 +150,7 @@ const FindACarPage = () => {
                 <div key={car._id} className="bg-card rounded-2xl shadow">
                   <div className="h-48 bg-gray-100 flex items-center justify-center">
                     <img
-                      src={car.image || "/images/car1.png"}
+                      src={car.images || "/images/car1.png"}
                       alt={car.title}
                       className="w-full h-full object-cover"
                     />
