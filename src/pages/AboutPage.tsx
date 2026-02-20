@@ -15,7 +15,7 @@ const team = [
 
 const AboutPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       {/* Hero */}
       <section className="hero-gradient py-20">
         <div className="container mx-auto text-center">
