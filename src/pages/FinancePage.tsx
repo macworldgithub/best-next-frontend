@@ -104,7 +104,7 @@ const FinancePage = () => {
   };
 
   return (
-    <div className="pt-24 pb-16 min-h-screen bg-gradient-to-b from-background to-muted/30">
+    <div className="pt-16 pb-16 min-h-screen bg-gradient-to-b from-background to-muted/30">
       {/* Hero */}
       <section className="hero-gradient py-16 md:py-20">
         <div className="container mx-auto px-6 text-center">

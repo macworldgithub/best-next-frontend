@@ -1,6 +1,6 @@
 const PrivacyPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       <section className="hero-gradient py-20">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-secondary-foreground font-display mb-6">

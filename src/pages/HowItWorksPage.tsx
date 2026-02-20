@@ -43,7 +43,7 @@ const steps = [
 
 const HowItWorksPage = () => {
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       <section className="hero-gradient py-20">
         <div className="container mx-auto text-center">
           <p className="text-primary font-semibold text-sm uppercase tracking-widest mb-3">Our Process</p>

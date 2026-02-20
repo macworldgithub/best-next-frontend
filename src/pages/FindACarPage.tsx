@@ -53,7 +53,7 @@ const FindACarPage = () => {
   }, [selectedType, path, budgetMin, budgetMax, page]);
 
   return (
-    <div className="pt-24">
+    <div className="pt-16">
       {/* Header */}
       <section className="py-16 bg-background">
         <div className="container mx-auto max-w-6xl">
