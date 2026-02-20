@@ -57,7 +57,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right - Budget card */}
-          <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
+          {/* <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="bg-card rounded-2xl p-8 card-elevated max-w-md mx-auto lg:ml-auto">
               <h2 className="text-xl font-bold text-card-foreground mb-2 font-display">
                 Pre-Qualify for Your Next Car!
@@ -95,7 +95,7 @@ const HeroSection = () => {
                 🔒 Instant online approval — no impact to your credit score
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

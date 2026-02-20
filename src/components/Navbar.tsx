@@ -13,7 +13,7 @@ const Navbar = () => {
     { label: "Finance", href: "/finance" },
     { label: "How It Works", href: "/how-it-works" },
     { label: "About Us", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    // { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -84,11 +84,11 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link to="/find-a-car" onClick={() => setIsOpen(false)}>
+            {/* <Link to="/find-a-car" onClick={() => setIsOpen(false)}>
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold w-full mt-2">
                 Get My Deal
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </div>
       )}

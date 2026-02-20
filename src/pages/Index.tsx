@@ -9,7 +9,7 @@ const Index = () => {
       <HeroSection />
       <HowItWorks />
       <FeaturesSection />
-      <CTASection />
+      {/* <CTASection /> */}
     </>
   );
 };
