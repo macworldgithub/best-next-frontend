@@ -111,7 +111,7 @@ const FinancePage = () => {
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-4">
             Instant Finance Guidance
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-secondary-foreground font-display mb-6">
             Calculate Your <span className="text-gradient-amber">LVR</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
