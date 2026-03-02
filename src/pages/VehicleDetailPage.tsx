@@ -670,7 +670,7 @@ const VehicleDetailPage = () => {
                   }
                 >
                   <ExternalLink size={18} />
-                  View on Trading Garage
+                  View Car
                 </Button>
 
                 <Button
